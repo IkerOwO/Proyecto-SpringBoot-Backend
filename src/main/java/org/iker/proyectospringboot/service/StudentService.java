@@ -39,5 +39,13 @@ public class StudentService {
         // Si existe, lo borramos
         studentRepository.deleteById(studentId);
     }
+    
+    public void updateStudent(Long studentId){
+        boolean exists = studentRepository.existsById(studentId);
+        if (!exists){
+            throw new IllegalStateException("Student doesn't exists");
+        }
+        // TODO: Logica del update
+    }
 
 }
